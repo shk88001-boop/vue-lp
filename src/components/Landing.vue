@@ -1,14 +1,70 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
+
 // VisiOpt Smart Code for Landing page only
 onMounted(() => {
   const script = document.createElement('script');
   script.async = true;
   script.type = 'text/javascript';
-  script.innerHTML = `window.visiopt_code=window.visiopt_code||(function(){var visi_wid=1044,visi_flicker_time=4000,visi_flicker_element='html',c=false,d=document,visi_fn={begin:function(){var a=d.getElementById('visi_flicker');if(!a){var a=d.createElement('style'),b=visi_flicker_element?visi_flicker_element+'{opacity:0!important;background:none!important;}':'',h=d.getElementsByTagName('head')[0];a.setAttribute('id','visi_flicker');a.setAttribute('type','text/css');if(a.styleSheet){a.styleSheet.cssText=b;}else{a.appendChild(d.createTextNode(b));}h.appendChild(a);}},complete:function(){c=true;var a=d.getElementById('visi_flicker');if(a){a.parentNode.removeChild(a);}},completed:function(){return c;},pack:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){visi_fn.complete();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){visi_fn.begin();setTimeout(function(){visi_fn.complete()},visi_flicker_time);this.pack('https://visioptdev.com/client/js_test/vt.'+visi_wid+'.js');return true;}};window.visiopt_code_status=visi_fn.init();return visi_fn;}())`;
+  script.innerHTML = `
+    window.visiopt_code=window.visiopt_code||(function(){
+      var visi_wid=1040,
+          visi_flicker_time=4000,
+          visi_flicker_element='html',
+          c=false,
+          d=document,
+          visi_fn={
+            begin:function(){
+              var a=d.getElementById('visi_flicker');
+              if(!a){
+                var a=d.createElement('style'),
+                    b=visi_flicker_element
+                      ? visi_flicker_element+'{opacity:0!important;background:none!important;}'
+                      : '',
+                    h=d.getElementsByTagName('head')[0];
+                a.setAttribute('id','visi_flicker');
+                a.setAttribute('type','text/css');
+                if(a.styleSheet){
+                  a.styleSheet.cssText=b;
+                } else {
+                  a.appendChild(d.createTextNode(b));
+                }
+                h.appendChild(a);
+              }
+            },
+            complete:function(){
+              c=true;
+              var a=d.getElementById('visi_flicker');
+              if(a){a.parentNode.removeChild(a);}
+            },
+            completed:function(){return c;},
+            pack:function(a){
+              var b=d.createElement('script');
+              b.src=a;
+              b.type='text/javascript';
+              b.onerror=function(){visi_fn.complete();};
+              d.getElementsByTagName('head')[0].appendChild(b);
+            },
+            init:function(){
+              visi_fn.begin();
+              setTimeout(function(){visi_fn.complete()}, visi_flicker_time);
+              this.pack('https://visioptdev.com/client/js_test/vt.'+visi_wid+'.js');
+              return true;
+            }
+          };
+      window.visiopt_code_status=visi_fn.init();
+      return visi_fn;
+    }());
+  `;
   document.head.appendChild(script);
 });
+import { useRouter } from 'vue-router'
 
-import { onMounted } from 'vue';
+const router = useRouter()
+
+const goToFreeTrial = () => {
+  router.push('/free-trial')
+}
 </script>
 
 <template>
@@ -18,7 +74,7 @@ import { onMounted } from 'vue';
       <div class="hero-content">
         <h1>Project Management Reimagined</h1>
         <p class="hero-subtitle">Transform your workflow with intelligent collaboration tools</p>
-        <button class="cta-button">Start Free Trial - 30 Days</button>
+        <button class="btn-start"  @click="goToFreeTrial">Start Free Trial – 30 Days</button>
         <p class="hero-meta">No credit card required • Deploy in minutes</p>
       </div>
       <div class="hero-image">
@@ -486,7 +542,7 @@ import { onMounted } from 'vue';
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.cta-button {
+.btn-start {
   background: white;
   color: #667eea;
   padding: 16px 40px;
@@ -499,27 +555,9 @@ import { onMounted } from 'vue';
   display: inline-block;
 }
 
-.cta-button:hover {
+.btn-start:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button.primary {
-  background: #667eea;
-  color: white;
-  border: 2px solid white;
-}
-
-.cta-button.secondary {
-  background: transparent;
-  color: white;
-  border: 2px solid white;
-  margin-left: 15px;
-}
-
-.cta-button.secondary:hover {
-  background: white;
-  color: #667eea;
 }
 
 /* Features Overview */
