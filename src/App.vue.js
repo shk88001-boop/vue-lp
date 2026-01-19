@@ -13,4 +13,3 @@ var __VLS_5 = {};
 var __VLS_3;
 const __VLS_export = (await import('vue')).defineComponent({});
 export default {};
-//# sourceMappingURL=App.vue.js.map

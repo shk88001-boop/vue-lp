@@ -5,4 +5,3 @@ import './style.css';
 createApp(App)
     .use(router) // 👈 ADD THIS
     .mount('#app');
-//# sourceMappingURL=main.js.map

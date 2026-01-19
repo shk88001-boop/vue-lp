@@ -1,1 +1,1 @@
-{"root":["./src/main.ts","./src/vite-env.d.ts","./src/router/index.ts","./src/utils/visiopt.ts","./src/app.vue","./src/components/landing.vue","./src/components/landing1.vue","./vite.config.ts"],"version":"5.9.3"}
+{"root":["./src/app.vue","./src/main.ts","./src/vite-env.d.ts","./src/components/landing.vue","./src/components/landing1.vue","./src/router/index.ts","./src/utils/visiopt.ts","./vite.config.ts"],"version":"5.9.3"}
